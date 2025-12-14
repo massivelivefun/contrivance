@@ -2,8 +2,44 @@
 name = "contrivance"
 version = "0.1.0"
 authors = ["massivelivefun <matthewlancefuller@gmail.com>"]
-edition = "2021"
+edition = "2024"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
+[workspace]
+members = [
+    "crates/model_lib",
+    "crates/trainer",
+    "crates/predict",
+]
+resolver = "2"
+
+[[bin]]
+name = "application"
+path = "src/main.rs"
+
+[[bin]]
+name = "trainer"
+path = "crates/trainer/src/main.rs"
+
+[[bin]]
+name = "predict"
+path = "crates/predict/src/main.rs"
+
 [dependencies]
+iced = { version = "0.14.0", features = ["wgpu", "advanced", "tokio", "canvas"] }
+iced_futures = "0.14.0"
+# cargo tree -i ndarray
+ndarray = "0.16.1"
+ort = { version = "2.0.0-rc.10", features = ["ndarray"] }
+# this is for downloading the onnxruntime binary
+# ort = { version = "2.0.0-rc.10", features = ["ndarray", "download-binaries"] }
+tokenizers = { version = "0.22.2", default-features = false, features = ["onig", "progressbar", "http"] }
+bytemuck = { version = "1.16.1", features = ["derive"] } # For sending data to the gpu
+candle-core = "0.8.0"
+candle-nn = "0.8.0"
+glam = "0.28"
+
+model_lib = { path = "crates/model_lib" }
+log = "0.4.29"
+image = "0.25.9"

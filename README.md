@@ -1,3 +1,7 @@
+$env:RUSTFLAGS="-C target-feature=-crt-static"
+pip install torch transformers onnx onnxscript onnxruntime
+python v3.14 breaks the export file
+
 # Contrivance
 
 A video game engine written in Rust.

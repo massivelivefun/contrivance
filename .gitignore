@@ -3,3 +3,14 @@
 # File system
 .DS_Store
 desktop.ini
+
+distilbert.onnx
+distilbert.onnx.data
+onnxruntime.dll
+
+model/ner_results
+
+model/onnx_export/model.onnx
+model/onnx_export/model.onnx.data
+
+*.safetensors

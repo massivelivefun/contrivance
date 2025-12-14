@@ -1,0 +1,13 @@
+text,label
+"look at that wall",LOOK
+"what do you see over there",LOOK
+"can you see the player",LOOK
+"move forward",MOVE
+"go to the kitchen",MOVE
+"run to the objective",MOVE
+"turn around",TURN
+"rotate left",TURN
+"spin 180 degrees",TURN
+"hello there",OTHER
+"this is a good day",OTHER
+"I hate this lag",OTHER
